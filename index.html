@@ -13,7 +13,7 @@
   text-align: center;
 }
 .button {
-  background-color: gray;
+  background-color: #bdbdc1;
   color: black;
   border: 2px solid #555555;
   padding: 5px 10px;
@@ -30,7 +30,6 @@
 .body {
   border-radius: 0px;
   background-color: #bdbdc1;
-  background-image: url("owl.png");
 }
 .wrapper {
   text-align: center;
@@ -52,23 +51,83 @@
 </div>
 
 <div class="questions" style="padding:0px 40px">
-	<form action="">
-    <input type="checkbox" name="1"> Question 1<br>
-    <input type="checkbox" name="2"> Question 2<br>
-    <input type="checkbox" name="3"> Question 3<br>
-	</form>
+	<ol>
+    	<li> <input type="checkbox" id="1"> Held hands romantically?
+        <li> <input type="checkbox" id="2"> Been on a date?
+        <li> <input type="checkbox" id="3"> Been in a relationship?
+        <li> <input type="checkbox" id="4"> Danced without leaving room for Jesus?
+        <li> <input type="checkbox" id="5"> Kissed a non-family member?
+        <li> <input type="checkbox" id="6"> Kissed a non-family member on the lips?
+        <li> <input type="checkbox" id="7"> French kissed?
+        <li> <input type="checkbox" id="8"> French kissed in public?
+        <li> <input type="checkbox" id="9"> Kissed on the neck?
+        <li> <input type="checkbox" id="10"> Kissed horizontally?
+        <li> <input type="checkbox" id="11"> Given or received a hickey?
+        <li> <input type="checkbox" id="12"> Kissed or been kissed on the breast?
+        <li> <input type="checkbox" id="13"> Kissed someone below the belt?
+        <li> <input type="checkbox" id="14"> Kissed for more than two hours consecutively?
+        <li> <input type="checkbox" id="15"> Played a game involving stripping?
+        <li> <input type="checkbox" id="16"> Seen or been seen by another person in a sensual context?
+        <li> <input type="checkbox" id="17"> Masturbated?
+        <li> <input type="checkbox" id="18"> Masturbated to a picture or video?
+        <li> <input type="checkbox" id="19"> Masturbated while someone else was in the room?
+        <li> <input type="checkbox" id="20"> Been caught masturbating?
+        <li> <input type="checkbox" id="21"> Masturbated with an inanimate object?
+        <li> <input type="checkbox" id="22"> Seen or read pornographic material?
+        <li> <input type="checkbox" id="23"> Massaged or been massaged sensually?
+        <li> <input type="checkbox" id="24"> Gone through the motions of intercourse while fully dressed?
+        <li> <input type="checkbox" id="25"> Undressed or been undressed by a MPS (member of the preferred sex)?
+        <li> <input type="checkbox" id="26"> Showered with a MPS?
+        <li> <input type="checkbox" id="27"> Fondled or had your butt cheeks fondled?
+        <li> <input type="checkbox" id="28"> Fondled or had your breasts fondled?
+        <li> <input type="checkbox" id="29"> Fondled or had your genitals fondled?
+        <li> <input type="checkbox" id="30"> Had or given &ldquo;blue balls&rdquo;?
+        <li> <input type="checkbox" id="31"> Had an orgasm due to someone else&rsquo;s manipulation?
+        <li> <input type="checkbox" id="32"> Sent a sexually explicit text or instant message?
+        <li> <input type="checkbox" id="33"> Sent or received sexually explicit photographs?
+        <li> <input type="checkbox" id="34"> Engaged in sexually explicit activity over video chat?
+        <li> <input type="checkbox" id="35"> Cheated on a significant other during a relationship?
+        <li> <input type="checkbox" id="36"> Purchased contraceptives?
+        <li> <input type="checkbox" id="37"> Gave oral sex?
+        <li> <input type="checkbox" id="38"> Received oral sex?
+        <li> <input type="checkbox" id="39"> Ingested someone else&rsquo;s genital secretion?
+        <li> <input type="checkbox" id="40"> Used a sex toy with a partner?
+        <li> <input type="checkbox" id="41"> Spent the night with a MPS?
+        <li> <input type="checkbox" id="42"> Been walked in on while engaging in a sexual act?
+        <li> <input type="checkbox" id="43"> Kicked a roommate out to commit a sexual act?
+        <li> <input type="checkbox" id="44"> Ingested alcohol in a non-religious context?
+        <li> <input type="checkbox" id="45"> Played a drinking game?
+        <li> <input type="checkbox" id="46"> Been drunk?
+        <li> <input type="checkbox" id="47"> Faked sobriety to parents or teachers?
+        <li> <input type="checkbox" id="48"> Had severe memory loss due to alcohol?
+        <li> <input type="checkbox" id="49"> Used tobacco?
+        <li> <input type="checkbox" id="50"> Used marijuana?
+	</ol>
     <br>
 </div>
 
 <div class="wrapper">
-  <button class="button" onclick="score()">Score</button>
-  <button class="button" onclick="clear()">Clear all</button>
+  <button class="button" onclick="submit(1)">Score</button>
+  <button class="button" onclick="submit(2)">Clear all</button>
 </div>
 
-<p id="page"></p>
+<div class="wrapper">
+  <h1 class=heading1 id="score">Your Score:</h1>
+</div>
+
 
 <script>
-function score() {
+function submit(r) {
+	var qList = document.querySelectorAll('input[type="checkbox"]:checked');
+    var score = qList.length;
+    
+    if (r == 1) {
+    	document.getElementById("score").innerHTML = 'Your Score: ' + score;
+    }
+    else if (r == 2) {
+    	for (var i = 0; i < qList.length; ++i) { qList[i].checked = false; }
+        document.getElementById("score").innerHTML = 'Your Score: ';
+    }
 }
 </script>
 
