@@ -135,7 +135,7 @@ function submit(r) {
     	document.getElementById("score").innerHTML = 'Your Score: ' + score;
 	gtag('event', 'ScoreSubmitted', {
 	  'event_category': 'Response',
-	  'event_label': 'Score',
+	  'event_label': score.toString(),
 	  'value': score
         });
     }
