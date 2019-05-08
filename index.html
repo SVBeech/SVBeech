@@ -133,6 +133,7 @@ function submit(r) {
     
     if (r == 1) {
     	document.getElementById("score").innerHTML = 'Your Score: ' + score;
+	ga('set', 'metric1', score);
     }
     else if (r == 2) {
     	for (var i = 0; i < qList.length; ++i) { qList[i].checked = false; }
