@@ -8,6 +8,9 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-139877044-1');
+  gtag('config', 'GA_MEASUREMENT_ID', {
+    'custom_map': {'metric<Index>': 'score'}
+  });
 </script>
 	
 <head>
@@ -133,7 +136,7 @@ function submit(r) {
     
     if (r == 1) {
     	document.getElementById("score").innerHTML = 'Your Score: ' + score;
-	ga('set', 'metric1', score);
+	gtag('event', 'score_metric', {'score': score});
     }
     else if (r == 2) {
     	for (var i = 0; i < qList.length; ++i) { qList[i].checked = false; }
